@@ -151,13 +151,7 @@ Middle ground between Linear and Binary search.
 
 # 📈 Performance Visualization
 
-![Image](https://www.researchgate.net/publication/273634317/figure/fig9/AS%3A668366968745991%401536362511178/Hit-rate-vs-cache-size-The-graph-above-Fig-6clearly-shows-increasing-interest-as-the.ppm)
-
 ![Image](https://www.researchgate.net/publication/369241086/figure/fig5/AS%3A11431281168658171%401687074250308/Model-comparison-based-on-performance-Figure-7-Bar-graph-shows-the-accuracy-and.ppm)
-
-![Image](https://upload.wikimedia.org/wikipedia/commons/0/0c/ComputerMemoryHierarchy.svg)
-
-![Image](https://www.researchgate.net/publication/319529366/figure/fig1/AS%3A535981658828805%401504799393590/The-memory-hierarchy-pyramid.png)
 
 ---
 
