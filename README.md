@@ -12,8 +12,6 @@
 
 ## 🖥️ Project Banner
 
-![Image](https://www.researchgate.net/publication/348273666/figure/fig1/AS%3A976988181389313%401609943542105/RISCV-Processor-Block-Diagram-17.jpg)
-
 ![Image](https://media.licdn.com/dms/image/v2/D5612AQFuq2sjf1lIkA/article-cover_image-shrink_720_1280/B56ZYBvtd2HQAM-/0/1743786007946?e=2147483647\&t=-2jKJtWVxJroAT-zdoy9Nw7DFAnNUkkkPzsZ1k7mqdA\&v=beta)
 
 ![Image](https://hackster.imgix.net/uploads/attachments/1721819/5stage_ZN1MBxArz4.gif?auto=format%2Ccompress\&fit=min\&fm=jpg\&gifq=35\&h=1200\&w=1600)
@@ -237,14 +235,3 @@ Course: Computer Organization & Architecture
 # 📌 Takeaway Quote
 
 > “The fastest algorithm on paper is not always the fastest on hardware.”
-
----
-
-If you want, I can also:
-
-* 📄 Generate a clean project report PDF version
-* 📊 Create real performance graph images
-* 🎨 Design a professional GitHub cover banner
-* 🧾 Add a LinkedIn-ready project description
-
-Tell me what you need next, Shree 😌
