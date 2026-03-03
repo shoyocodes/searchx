@@ -1,16 +1,23 @@
+
 # 🔎 Search Algorithm Analysis under Different Cache Organizations
 
-### ⚡ Hardware-Aware Algorithm Performance on RISC-V
+<p align="center">
 
-![RISC-V](https://img.shields.io/badge/Architecture-RISC--V-blue)
-![Simulator](https://img.shields.io/badge/Simulator-Ripes-green)
-![Language](https://img.shields.io/badge/Language-RISC--V%20Assembly-orange)
-![Status](https://img.shields.io/badge/Project-Completed-brightgreen)
-![Course](https://img.shields.io/badge/Course-Computer%20Organization%20%26%20Architecture-purple)
+![RISC-V](https://img.shields.io/badge/Architecture-RISC--V-0C7BDC?style=for-the-badge\&logo=riscv\&logoColor=white)
+![Simulator](https://img.shields.io/badge/Simulator-Ripes-2ECC71?style=for-the-badge)
+![Language](https://img.shields.io/badge/Language-RISC--V%20Assembly-F39C12?style=for-the-badge)
+![Cache Analysis](https://img.shields.io/badge/Focus-Cache%20Optimization-8E44AD?style=for-the-badge)
+![Pipeline](https://img.shields.io/badge/Analysis-Pipeline%20Stalls-34495E?style=for-the-badge)
+![Course](https://img.shields.io/badge/Course-Computer%20Organization%20%26%20Architecture-E74C3C?style=for-the-badge)
+![Status](https://img.shields.io/badge/Status-Completed-27AE60?style=for-the-badge)
+
+</p>
 
 ---
 
-## 🖥️ Project Banner
+## 🖥 Project Visualization
+
+![Image](https://docs.openhwgroup.org/projects/cv32e40p-user-manual/en/cv32e40p_v1.1.0/_images/CV32E40P_Block_Diagram.png)
 
 ![Image](https://media.licdn.com/dms/image/v2/D5612AQFuq2sjf1lIkA/article-cover_image-shrink_720_1280/B56ZYBvtd2HQAM-/0/1743786007946?e=2147483647\&t=-2jKJtWVxJroAT-zdoy9Nw7DFAnNUkkkPzsZ1k7mqdA\&v=beta)
 
@@ -22,124 +29,99 @@
 
 # 📌 Overview
 
-This project explores how **algorithm efficiency changes when hardware constraints are considered**.
+This project evaluates how searching algorithms behave under different **cache organizations** using the **Ripes** simulator on a RISC-V architecture.
 
-We implemented and analyzed:
+Instead of comparing algorithms only using theoretical complexity, this study focuses on:
 
-* 🔹 Linear Search
-* 🔹 Binary Search
-* 🔹 Jump Search
-
-Using the **Ripes** simulator on a **RISC-V architecture**, we evaluated:
-
-* Cache hit/miss rate
-* Memory latency
-* Pipeline stalls
-* Total execution cycles
+* 💾 Cache Hit/Miss Rate
+* ⏱ Memory Access Latency
+* ⚙ Pipeline Stalls
+* 🔁 Total Execution Cycles
 
 ---
 
-# 🧠 Why This Project is Special
+# 🎯 Objective
 
-Most textbooks compare algorithms using only **Big-O complexity**.
-
-This project goes deeper:
-
-> ⚙️ We analyze how memory hierarchy and cache organization affect real execution performance.
-
-It proves that:
-
-* A theoretically faster algorithm (Binary Search)
-* May perform worse due to cache miss penalties
+To analyze how **hardware-level cache configuration impacts algorithm performance**, and to determine whether theoretical complexity always translates to practical efficiency.
 
 ---
 
-# 🛠 Tools & Technologies
-
-| Tool                   | Purpose                                       |
-| ---------------------- | --------------------------------------------- |
-| Ripes                  | RISC-V Simulation                             |
-| RISC-V Assembly        | Algorithm Implementation                      |
-| Cache Configuration    | Associativity, Block Size, Replacement Policy |
-| Pipeline Visualization | Stall Analysis                                |
-
----
-
-# 🔍 Algorithms Implemented
+# 🧠 Algorithms Implemented
 
 ---
 
 ## 1️⃣ Linear Search
 
-### 🧮 Complexity
+### 🔹 Complexity
 
-* Best: O(1)
-* Worst: O(n)
+* Best Case: O(1)
+* Worst Case: O(n)
 
-### 💾 Cache Behavior
+### 🔹 Cache Behavior
 
 ✔ Excellent spatial locality
-✔ High cache hit rate
 ✔ Sequential memory access
+✔ Very high cache hit rate
 
-### ⚠ Trade-Off
+### 🔹 Insight
 
-More comparisons but minimal memory penalties.
+Although slower in theory, it often performs efficiently due to cache friendliness.
 
 ---
 
 ## 2️⃣ Binary Search
 
-### 🧮 Complexity
+### 🔹 Complexity
 
-* Best: O(1)
-* Worst: O(log n)
+* Best Case: O(1)
+* Worst Case: O(log n)
 
-### 💾 Cache Behavior
+### 🔹 Cache Behavior
 
-✖ Poor spatial locality
-✖ Frequent cache misses
-✖ Random memory jumps
+✖ Random memory access
+✖ Higher cache miss rate
+✖ Increased memory latency
 
-### ⚠ Trade-Off
+### 🔹 Insight
 
-Fewer instructions but higher memory latency impact.
+Despite fewer comparisons, performance may degrade due to cache penalties.
 
 ---
 
 ## 3️⃣ Jump Search
 
-### 🧮 Complexity
+### 🔹 Complexity
 
-* Best: O(1)
-* Worst: O(√n)
+* Best Case: O(1)
+* Worst Case: O(√n)
 
-### 💾 Cache Behavior
+### 🔹 Cache Behavior
 
-✔ Balanced locality
+✔ Balanced access pattern
 ✔ Moderate miss rate
-✔ Block-based search
+✔ Partial spatial locality
 
-### ⚠ Trade-Off
+### 🔹 Insight
 
-Middle ground between Linear and Binary search.
+Provides a trade-off between linear and binary search.
 
 ---
 
 # 🧪 Experimental Setup
 
-| Parameter          | Values Tested                  |
-| ------------------ | ------------------------------ |
-| Cache Type         | Direct Mapped, Set Associative |
-| Block Size         | 4B, 8B, 16B                    |
-| Replacement Policy | LRU / FIFO                     |
-| Array Size         | 256 Elements                   |
+| Parameter          | Configurations Tested           |
+| ------------------ | ------------------------------- |
+| Cache Type         | Direct Mapped / Set Associative |
+| Block Size         | 4B, 8B, 16B                     |
+| Replacement Policy | LRU / FIFO                      |
+| Array Size         | 256 Elements                    |
+| Architecture       | RISC-V                          |
 
 ---
 
-# 📊 Sample Benchmark Results
+# 📊 Sample Performance Results
 
-*(Example representation – replace with actual measured values if needed)*
+*(Replace with your actual measured results if required)*
 
 | Algorithm     | Hit Rate | Miss Rate | Execution Cycles |
 | ------------- | -------- | --------- | ---------------- |
@@ -149,39 +131,40 @@ Middle ground between Linear and Binary search.
 
 ---
 
-# 📈 Performance Visualization
+# 📈 Cache & Pipeline Analysis
 
-![Image](https://www.researchgate.net/publication/369241086/figure/fig5/AS%3A11431281168658171%401687074250308/Model-comparison-based-on-performance-Figure-7-Bar-graph-shows-the-accuracy-and.ppm)
+![Image](https://ars.els-cdn.com/content/image/3-s2.0-B9780128003428000043-f04-18-9780128003428.jpg)
 
----
+![Image](https://upload.wikimedia.org/wikipedia/commons/0/0c/ComputerMemoryHierarchy.svg)
 
-# 🧩 Key Findings
+![Image](https://timmastny.com/blog/visualizing-cpu-pipelining/hdu.svg)
 
-### ✅ Linear Search
-
-Best cache utilization due to sequential access.
-
-### ⚠ Binary Search
-
-Fewer comparisons but suffers from memory access penalties.
-
-### ⚖ Jump Search
-
-Optimal trade-off between locality and comparison reduction.
+![Image](https://media.springernature.com/lw685/springer-static/image/art%3A10.1186%2Fs13673-014-0016-8/MediaObjects/13673_2014_16_Fig1_HTML.gif)
 
 ---
 
-# 🏆 Final Conclusion
+# 🏆 Key Findings
 
-> 💡 Optimal system performance requires hardware-aware algorithm design.
+✅ Binary Search is theoretically fastest
+❌ But suffers from higher cache miss penalties
 
-Algorithm complexity alone does NOT determine real-world performance.
+✅ Linear Search maximizes spatial locality
 
-Cache configuration plays a critical role in:
+⚖ Jump Search provides balanced performance
 
-* Execution time
+---
+
+# 💡 Final Conclusion
+
+> Algorithm complexity alone does NOT guarantee optimal performance.
+
+Hardware configuration significantly impacts:
+
 * Processor efficiency
 * Memory latency
+* Execution time
+
+🔎 The best-performing system is one where **software design aligns with hardware architecture**.
 
 ---
 
@@ -202,30 +185,32 @@ Cache configuration plays a critical role in:
 
 # 🚀 How to Run
 
-1. Install Ripes
+1. Install Ripes Simulator
 2. Open assembly file
 3. Configure cache settings
 4. Run simulation
-5. Observe pipeline & statistics
+5. Observe pipeline and cache statistics
 
 ---
 
 # 👥 Team
 
 **Group 5**
-Course: Computer Organization & Architecture
+Computer Organization & Architecture Project
 
 ---
 
-# 🌟 Future Improvements
+# 🔮 Future Enhancements
 
-* Add larger dataset benchmarking
-* Compare with C implementation
-* Analyze branch prediction impact
-* Add automated performance logging
+* Larger dataset benchmarking
+* Branch prediction analysis
+* C implementation comparison
+* Automated cycle logging
 
 ---
 
-# 📌 Takeaway Quote
+# 📌 Takeaway
 
 > “The fastest algorithm on paper is not always the fastest on hardware.”
+
+
